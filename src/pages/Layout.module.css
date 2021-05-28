@@ -1,0 +1,36 @@
+.pageview {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.leftSideBar {
+  flex: 0.5;
+  background-color: rgb(19, 129, 114);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.main {
+  flex: 0.5;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.sideImage {
+  width: 300px !important;
+}
+
+@media (max-width: 860px) {
+  .leftSideBar {
+    display: none;
+  }
+  .main {
+    flex: 1;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
