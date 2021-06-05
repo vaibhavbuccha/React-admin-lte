@@ -4,14 +4,12 @@ import Menu from "../components/Menu";
 import Dashboard from "../components/Dashboard";
 import Body from "../components/Body";
 
-export default function Main() {
+export default function Main(props) {
   return (
     <div className="wrapper">
       <Header />
       <Menu />
-      <Body>
-        <Dashboard />
-      </Body>
+      <Body>{props.children}</Body>
     </div>
   );
 }
