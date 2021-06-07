@@ -48,6 +48,7 @@ export default function Signup() {
             border: !isError ? "1px solid green" : "1px solid red",
             padding: "10px",
             borderRadius: "10px",
+            display: response != "" ? "block" : "none",
           }}
         >
           {response}

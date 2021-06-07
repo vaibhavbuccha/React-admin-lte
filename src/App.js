@@ -5,16 +5,21 @@ import AddEmployee from "./components/modules/AddEmployee";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Main from "./panel/Main";
+import { useState } from "react";
 
 function App() {
+  const [token, setToken] = useState();
+  if (!token) {
+    return <Login setToken={setToken} />;
+  }
   return (
     <Switch>
-      <Route path="/" exact>
+      {/* <Route path="/" exact>
         <Login />
-      </Route>
-      <Route path="/signup" exact>
+      </Route> */}
+      {/* <Route path="/signup" exact>
         <Signup />
-      </Route>
+      </Route> */}
       <Route path="/dashboard" exact>
         <Main>
           <Dashboard />
