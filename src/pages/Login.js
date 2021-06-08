@@ -13,16 +13,19 @@ import {
 import style from "./Login.module.css";
 import { AccountCircle } from "@material-ui/icons";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
-import { Link } from "react-router-dom";
+import { Link, Redirect, Switch } from "react-router-dom";
 import axios from "axios";
-import PropTypes from "prop-types";
+import { isAuthenticated } from "../util";
 
-export default function Login({ setToken }) {
+export default function Login() {
   const email = useRef();
   const password = useRef();
 
   const [response, setResponse] = useState("");
   const [isError, setIsError] = useState(false);
+  if (isAuthenticated()) {
+    return <Redirect to="/dashboard" />;
+  }
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -34,9 +37,10 @@ export default function Login({ setToken }) {
       })
       .then((res) => {
         console.log(res.data);
-        setToken(res.data.token);
+        localStorage.setItem("token", res.data.token);
         setResponse(() => res.data.message);
         setIsError(false);
+        return <Redirect to="/dashboard" />;
       })
       .catch((err) => {
         setResponse(() => err.response.data.message);
@@ -109,7 +113,3 @@ export default function Login({ setToken }) {
     </Layout>
   );
 }
-
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired,
-};
