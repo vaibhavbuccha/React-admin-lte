@@ -31,7 +31,7 @@ export default function Login() {
     e.preventDefault();
     // alert(password.current.value);
     await axios
-      .post("http://localhost:5000/api/v1/admin/login", {
+      .post("admin/login", {
         email: email.current.value,
         password: password.current.value,
       })

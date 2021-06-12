@@ -24,7 +24,7 @@ export default function Signup() {
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/v1/admin/register", {
+      .post("admin/register", {
         name: `${firstName} ${lastName}`,
         email,
         password,

@@ -117,6 +117,15 @@ export default function Menu() {
                   </p>
                 </a>
               </li>
+              <li className="nav-item">
+                <a href="/department" className="nav-link">
+                  <i className="nav-icon fas fa-th"></i>
+                  <p>
+                    Department Management
+                    {/* <span className="right badge badge-danger">New</span> */}
+                  </p>
+                </a>
+              </li>
               {/* <li className="nav-item">
                 <a href="#" className="nav-link">
                   <i className="nav-icon fas fa-copy"></i>

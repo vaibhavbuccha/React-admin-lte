@@ -5,6 +5,8 @@ import AddEmployee from "./components/modules/AddEmployee";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Main from "./panel/Main";
+import Department from "./components/modules/Department";
+import AddDepartment from "./components/modules/AddDepartment";
 function App() {
   return (
     <Switch>
@@ -24,9 +26,19 @@ function App() {
           <Employee />
         </Main>
       </Route>
+      <Route path="/department" exact>
+        <Main>
+          <Department />
+        </Main>
+      </Route>
       <Route path="/add/employee" exact>
         <Main>
           <AddEmployee />
+        </Main>
+      </Route>
+      <Route path="/add/department" exact>
+        <Main>
+          <AddDepartment />
         </Main>
       </Route>
     </Switch>
