@@ -8,6 +8,9 @@ import Main from "./panel/Main";
 import Department from "./components/modules/Department";
 import AddDepartment from "./components/modules/AddDepartment";
 import UpdateDepartment from "./components/modules/UpdateDepartment";
+import Role from "./components/modules/role_module/Role";
+import AddRole from "./components/modules/role_module/AddRole";
+import UpdateRole from "./components/modules/role_module/UpdateRole";
 
 function App() {
   return (
@@ -46,6 +49,21 @@ function App() {
       <Route path="/department/:id" exact>
         <Main>
           <UpdateDepartment />
+        </Main>
+      </Route>
+      <Route path="/role" exact>
+        <Main>
+          <Role />
+        </Main>
+      </Route>
+      <Route path="/add/role" exact>
+        <Main>
+          <AddRole />
+        </Main>
+      </Route>
+      <Route path="/role/:id" exact>
+        <Main>
+          <UpdateRole />
         </Main>
       </Route>
     </Switch>

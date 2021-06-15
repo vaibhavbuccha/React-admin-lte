@@ -110,7 +110,7 @@ export default function Menu() {
               </li>
               <li className="nav-item">
                 <a href="/employee" className="nav-link">
-                  <i className="nav-icon fas fa-th"></i>
+                  <i className="nav-icon fas fa-users"></i>
                   <p>
                     Employee Management
                     {/* <span className="right badge badge-danger">New</span> */}
@@ -119,9 +119,18 @@ export default function Menu() {
               </li>
               <li className="nav-item">
                 <a href="/department" className="nav-link">
-                  <i className="nav-icon fas fa-th"></i>
+                  <i className="nav-icon fas fa-hotel"></i>
                   <p>
                     Department Management
+                    {/* <span className="right badge badge-danger">New</span> */}
+                  </p>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/role" className="nav-link">
+                  <i className="nav-icon fas fa-cog"></i>
+                  <p>
+                    Role Management
                     {/* <span className="right badge badge-danger">New</span> */}
                   </p>
                 </a>

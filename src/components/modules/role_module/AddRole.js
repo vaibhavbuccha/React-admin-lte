@@ -1,23 +1,25 @@
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import React, { useRef, useState } from "react";
-import ModuleLayout from "./ModuleLayout";
+import ModuleLayout from "../ModuleLayout";
 import axios from "axios";
-export default function AddDepartment() {
+
+export default function AddRole() {
   const nameRef = useRef();
+
   const [response, setResponse] = useState("");
   const [isError, setIsError] = useState(false);
+
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .post("department/create", {
+      .post("role/create", {
         name: nameRef.current.value,
       })
       .then((res) => {
         console.log(res);
-        setResponse(() => "Department created Successfully. ");
+        setResponse(() => "Role created Successfully. ");
         setIsError(false);
         setTimeout(() => {
-          window.location.href = "/department";
+          window.location.href = "/role";
         }, 1000);
       })
       .catch((err) => {
@@ -25,21 +27,22 @@ export default function AddDepartment() {
         setIsError(true);
       });
   };
+
   return (
-    <ModuleLayout moduleName="Add Department">
+    <ModuleLayout moduleName="Add New Role">
       <section className="content">
         <div className="row">
           <div className="col-12">
             <div className="card">
               <div className="card-header" align="right">
-                <a href="/department" className="btn btn-primary">
+                <a href="/role" className="btn btn-primary">
                   Back
                 </a>
               </div>
               <div class="card-body">
-                <MDBContainer>
-                  <MDBRow>
-                    <MDBCol size="6">
+                <form onSubmit={submitHandler}>
+                  <div className="row">
+                    <div className="col-sm-6">
                       <div
                         align="center"
                         style={{
@@ -54,25 +57,22 @@ export default function AddDepartment() {
                       >
                         {response}
                       </div>
-                      <form onSubmit={submitHandler}>
-                        <div className="form-group">
-                          <label htmlFor="Name">Department Name</label>
-                          <input
-                            ref={nameRef}
-                            type="text"
-                            name="name"
-                            className="form-control"
-                            placeholder="Name"
-                            required
-                          />
-                        </div>
-                        <div className="form-group">
-                          <button className="btn btn-info">Save</button>
-                        </div>
-                      </form>
-                    </MDBCol>
-                  </MDBRow>
-                </MDBContainer>
+                      <div className="form-group">
+                        <label htmlFor="roleName">Role Name</label>
+                        <input
+                          required
+                          type="text"
+                          className="form-control"
+                          placeholder="Role Name"
+                          ref={nameRef}
+                        />
+                      </div>
+                      <div className="form-group">
+                        <button className="btn btn-info">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
