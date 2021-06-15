@@ -7,6 +7,8 @@ import Signup from "./pages/Signup";
 import Main from "./panel/Main";
 import Department from "./components/modules/Department";
 import AddDepartment from "./components/modules/AddDepartment";
+import UpdateDepartment from "./components/modules/UpdateDepartment";
+
 function App() {
   return (
     <Switch>
@@ -39,6 +41,11 @@ function App() {
       <Route path="/add/department" exact>
         <Main>
           <AddDepartment />
+        </Main>
+      </Route>
+      <Route path="/department/:id" exact>
+        <Main>
+          <UpdateDepartment />
         </Main>
       </Route>
     </Switch>

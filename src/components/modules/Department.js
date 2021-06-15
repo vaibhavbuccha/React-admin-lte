@@ -52,9 +52,7 @@ export default function Department() {
   ];
 
   const clickHandler = (e, rowdata) => {
-    alert("working");
-    console.log(e);
-    console.log("rowdata", rowdata);
+    window.location.href = `/department/${rowdata._id}`;
   };
 
   return (
